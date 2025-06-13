@@ -6,8 +6,6 @@ require('dotenv').config();
 
 
 const app = express();
-const PORT = 4000;
-
 // Middleware
 app.use(cors());
 app.use(bodyParser.json({ limit: '10mb' }));
@@ -56,6 +54,7 @@ app.get('/api/properties', async (req, res) => {
 });
 
 // Start server
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`🚀 Gashtelo server running at http://localhost:${PORT}`);
 });
