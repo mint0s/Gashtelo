@@ -37,9 +37,14 @@ const Property = mongoose.model('Property', {
 
 // Routes
 app.post('/api/properties', async (req, res) => {
-  const newProp = new Property(req.body);
-  await newProp.save();
-  res.send({ success: true });
+  try {
+    const newProp = new Property(req.body);
+    await newProp.save();
+    res.send({ success: true });
+  } catch (err) {
+    console.error('❌ Failed to save property:', err); // Add this
+    res.status(500).send({ success: false, error: err.message }); // Add error response
+  }
 });
 
 app.get('/api/properties', async (req, res) => {
