@@ -92,7 +92,7 @@ if (form) {
         image: coverImage // ✅ this shows on the results page
       };
 
-      fetch('http://localhost:4000/api/properties', {
+      fetch('https://gashtelo-production.up.railway.app', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -183,7 +183,7 @@ if (resultsTitle && locationQuery) {
 
   async function loadFilteredProperties() {
     try {
-      const res = await fetch('http://localhost:4000/api/properties');
+      const res = await fetch('https://gashtelo-production.up.railway.app');
       const properties = await res.json();
       const container = document.getElementById('propertyContainer');
       container.innerHTML = '';
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const id = new URLSearchParams(window.location.search).get("id");
 
   if (container && id) {
-    fetch("http://localhost:4000/api/properties")
+    fetch("https://gashtelo-production.up.railway.app")
       .then((res) => res.json())
       .then((properties) => {
         const property = properties.find((p) => p._id === id);
