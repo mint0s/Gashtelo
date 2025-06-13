@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gashtelo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header>
+<div class="logo">
+  <a href="index.html">
+    <img src="img/Logo.png" alt="Gashtelo Logo" />
+  </a>
+</div>
+
+<nav class="nav-right">
+<a class="list-property" href="list.html">List Your Property</a>
+  <select class="language">
+    <option>English</option>
+    <option>Arabic</option>
+    <option>Kurdish</option>
+  </select>
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+  <div class="overlay">
+    <div class="search-box">
+      <div class="search-inputs">
+        <input type="text" id="location" placeholder="Destination (e.g., Duhok, Shaqlawa)" />
+
+        <div class="input-group floating">
+          <input type="date" id="checkin" required />
+          <label for="checkin">Check-in</label>
+        </div>
+
+        <div class="input-group floating">
+          <input type="date" id="checkout" required />
+          <label for="checkout">Check-out</label>
+        </div>
+
+        <input type="text" id="guests" placeholder="Guests (e.g., 2 adults, 1 child)" />
+      </div>
+      <button type="button" onclick="search()">Search</button>
+    </div>
+  </div>
+</section>
+
+  <!-- WHITE SCROLL SECTION -->
+<section class="scroll-section">
+<a id="scrollArrow" href="#section2">
+  <img src="img/arrow.png" alt="Scroll Down" class="scroll-arrow" />
+</a>
+</section>
+
+
+<!-- SECOND IMAGE SECTION -->
+<section id="section2" class="hero-transition">
+  <!-- you can add content here later if needed -->
+</section>
+
+</section>
+
+<!-- This must be outside .hero -->
+
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>List Your Property - Gashtelo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="list-page">
+    <header>
+<div class="logo">
+  <a href="index.html">
+    <img src="img/Logo.png" alt="Gashtelo Logo" />
+  </a>
+</div>
+
+      <nav>
+        <a class="home-link" href="index.html">Home</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="list-property-form">
+        <h2>List Your Property</h2>
+        <form id="propertyForm">
+          <input type="text" placeholder="Property Title" required />
+          <input type="text" placeholder="Location (e.g. Shaqlawa)" required />
+          <input type="number" placeholder="Price per night ($)" required />
+          <input type="number" placeholder="Max Guests" required />
+          <textarea placeholder="Description" rows="4" required></textarea>
+          <input type="file" id="imageUpload" name="images" accept="image/*" multiple required />
+           <div id="imagePreview"></div> <!-- NEW -->
+           <input type="hidden" id="coverImage" name="coverImage" /> <!-- NEW -->
+          <button type="submit">Submit Property</button>
+        </form>
+        <p id="successMsg" style="display:none;">✅ Property submitted!</p>
+      </section>
+    </main>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

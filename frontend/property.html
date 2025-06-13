@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Details - Gashtelo</title>
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+<body>
+  <header>
+    <div class="logo">Gashtelo</div>
+<a id="backToResults" class="back-home">Back to Results</a>
+
+  </header>
+
+  <main>
+    <section id="propertyDetails" class="property-details">
+      <p>Loading property...</p>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden">
+    <span class="close-btn">&times;</span>
+    <img id="lightboxImage" src="" alt="Full Image" />
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+  const queryParams = window.location.search;
+  const backLink = document.getElementById("backToResults");
+  if (backLink) {
+    backLink.href = "results.html" + queryParams;
+  }
+</script>
+</body>
+</html>
