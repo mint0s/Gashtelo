@@ -734,7 +734,7 @@ header {
   position: relative;
 }
 .results-bg {
-  background-image: url('../img/resultsbg.jpg');
+  background-color: #f5f5f5;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
