@@ -92,7 +92,8 @@ h1, h2, h3, h4 {
 /* Property listings section */
 .property-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  
+  grid-template-columns: 1fr;
   gap: 20px;
 }
 
@@ -782,6 +783,86 @@ header {
   width: 100%;
   max-width: 400px;
   height: auto;
+}
+@media (max-width: 768px) {
+  /* Fix navbar layout */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar .logo {
+    margin-bottom: 10px;
+  }
+
+  .navbar .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  /* Stack search inputs */
+  .search-bar {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .search-bar input,
+  .search-bar select {
+    width: 100%;
+  }
+
+  .search-bar .date-picker {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  /* ✅ Header layout fix */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-right {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ✅ Logo spacing */
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  /* ✅ Hero search box stacks cleanly */
+  .hero .search-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .search-inputs {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .search-box input,
+  .search-box select,
+  .search-box button {
+    width: 100%;
+  }
+
+  /* ✅ Optional: reduce padding on hero */
+  .hero {
+    padding-bottom: 20px;
+  }
 }
 
 
