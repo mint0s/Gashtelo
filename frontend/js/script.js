@@ -348,7 +348,11 @@ if (backLink) {
   backLink.href = "results.html" + (searchParams ? "?" + searchParams : "");
 }
 // FEATURED PROPERTIES on Homepage
-if (window.location.pathname.includes("index.html")) {
+if (
+  window.location.pathname === "/" ||
+  window.location.pathname.endsWith("/index.html")
+) {
+
   const featuredContainer = document.getElementById("featuredProperties");
 
   fetch("https://gashtelo-production.up.railway.app/api/properties")
