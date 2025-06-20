@@ -26,19 +26,23 @@
       <section class="list-property-form">
         <h2>List Your Property</h2>
         <form id="propertyForm">
+          <div class="property-type-bar">
+  <label class="property-type-label">Property Type:</label>
+  <div class="property-type-buttons">
+    <button type="button" class="type-option active" data-type="Hotel">🏨 Hotel</button>
+    <button type="button" class="type-option" data-type="Villa">🏡 Villa</button>
+    <button type="button" class="type-option" data-type="Cabin">🌲 Cabin</button>
+    <button type="button" class="type-option" data-type="Apartment">🏢 Apartment</button>
+    <button type="button" class="type-option" data-type="Bungalow">🌄 Bungalow</button>
+  </div>
+</div>
+
           <input type="text" placeholder="Property Title" required />
           <input type="text" placeholder="Location (e.g. Shaqlawa)" required />
           <input type="number" placeholder="Price per night ($)" required />
           <input type="number" placeholder="Max Guests" required />
           <textarea placeholder="Description" rows="4" required></textarea>
-          <label for="propertyType">Property Type:</label>
-<select id="propertyType" required>
-  <option value="Hotel">Hotel</option>
-  <option value="Villa">Villa</option>
-  <option value="Cabin">Cabin</option>
-  <option value="Apartment">Apartment</option>
-  <option value="Bungalow">Bungalow</option>
-</select>
+          
 
           <input type="file" id="imageUpload" multiple />
            <div id="imagePreview"></div> <!-- NEW -->
