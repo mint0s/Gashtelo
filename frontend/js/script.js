@@ -340,6 +340,8 @@ document.querySelectorAll("a[href]").forEach(link => {
   }
 });
 const backqueryParams = window.location.search;
+const backLink = document.getElementById("backToResults");
+
 if (backLink) {
   const backQueryParams = window.location.search;
   const urlParams = new URLSearchParams(backQueryParams);
