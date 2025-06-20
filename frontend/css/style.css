@@ -864,5 +864,13 @@ header {
     padding-bottom: 20px;
   }
 }
+.property-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;   /* ⬅️ Center the items horizontally */
+  gap: 30px;
+  padding: 20px 0;
+}
+
 
 
