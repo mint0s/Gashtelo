@@ -347,3 +347,36 @@ if (backLink) {
   const searchParams = urlParams.toString();
   backLink.href = "results.html" + (searchParams ? "?" + searchParams : "");
 }
+// FEATURED PROPERTIES on Homepage
+if (window.location.pathname.includes("index.html")) {
+  const featuredContainer = document.getElementById("featuredProperties");
+
+  fetch("https://gashtelo-production.up.railway.app/api/properties")
+    .then(res => res.json())
+    .then(properties => {
+      const featured = properties.filter(p => p.featured).slice(0, 3);
+
+      featured.forEach(p => {
+        const card = document.createElement("div");
+        card.className = "property-card";
+        card.innerHTML = `
+          <img src="${p.image || p.images?.[0] || 'img/fallback.png'}" alt="${p.title}">
+          <div class="card-details">
+            <h3>${p.title}</h3>
+            <p><strong>Location:</strong> ${p.location}</p>
+            <p><strong>Guests:</strong> up to ${p.guests}</p>
+            <p><strong>Price:</strong> $${p.price} per night</p>
+            <a href="property.html?id=${p._id}">
+              <button>View Details</button>
+            </a>
+          </div>
+        `;
+        featuredContainer.appendChild(card);
+      });
+    })
+    .catch(err => {
+      console.error("Error loading featured properties:", err);
+      featuredContainer.innerHTML = "<p>Could not load featured properties.</p>";
+    });
+}
+

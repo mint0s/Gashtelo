@@ -32,9 +32,11 @@ const Property = mongoose.model('Property', {
   price: Number,
   guests: Number,
   description: String,
-  images: [String],   // all uploaded images
-  image: String       // selected cover image
+  images: [String],
+  image: String,
+  featured: Boolean  // ✅ New field
 });
+
 
 // Routes
 app.post('/api/properties', async (req, res) => {
