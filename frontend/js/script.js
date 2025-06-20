@@ -349,15 +349,15 @@ if (backLink) {
 }
 // FEATURED PROPERTIES on Homepage
 if (
-  window.location.pathname === "" ||
+  window.location.pathname === "/" ||
   window.location.pathname.endsWith("/index.html")
 ) {
-
   const featuredContainer = document.getElementById("featuredProperties");
 
   fetch("https://gashtelo-production.up.railway.app/api/properties")
     .then(res => res.json())
     .then(properties => {
+      console.log("Fetched properties:", properties); // 👈 ADD THIS LINE
       const featured = properties.filter(p => p.featured === true).slice(0, 3);
 
       featured.forEach(p => {
