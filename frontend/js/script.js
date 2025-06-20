@@ -349,7 +349,7 @@ if (backLink) {
 }
 // FEATURED PROPERTIES on Homepage
 if (
-  window.location.pathname === "/" ||
+  window.location.pathname === "" ||
   window.location.pathname.endsWith("/index.html")
 ) {
 
@@ -358,7 +358,7 @@ if (
   fetch("https://gashtelo-production.up.railway.app/api/properties")
     .then(res => res.json())
     .then(properties => {
-      const featured = properties.filter(p => p.featured).slice(0, 3);
+      const featured = properties.filter(p => p.featured === true).slice(0, 3);
 
       featured.forEach(p => {
         const card = document.createElement("div");
