@@ -7,9 +7,11 @@ function search() {
   const checkin = document.getElementById('checkin').value;
   const checkout = document.getElementById('checkout').value;
   const guests = document.getElementById('guests').value;
+  const selectedType = document.querySelector('.type-option.active')?.dataset.type || 'All';
 
-  window.location.href = `results.html?location=${encodeURIComponent(location)}&checkin=${checkin}&checkout=${checkout}&guests=${encodeURIComponent(guests)}`;
+  window.location.href = `results.html?location=${encodeURIComponent(location)}&checkin=${checkin}&checkout=${checkout}&guests=${encodeURIComponent(guests)}&type=${encodeURIComponent(selectedType)}`;
 }
+
 
 // Handle property form submission
 const form = document.getElementById('propertyForm');
@@ -63,7 +65,10 @@ if (form) {
     const price = form[2].value;
     const guests = form[3].value;
     const description = form[4].value;
-    const imageFiles = form[5].files;
+    const imageFiles = document.getElementById("imageUpload").files;
+    const type = document.querySelector(".type-option.active")?.dataset.type || "All";
+
+
 
     if (imageFiles.length === 0) {
       alert("Please upload at least one image.");
@@ -81,16 +86,17 @@ if (form) {
 
      Promise.all(imagePromises).then(images => {
       const coverImage = images[coverImageIndex]; // ✅ use selected cover
+const data = {
+  title,
+  location,
+  price,
+  guests,
+  description,
+  images,
+  image: coverImage,
+  type  // ✅ include type here!
+};
 
-      const data = {
-        title,
-        location,
-        price,
-        guests,
-        description,
-        images,
-        image: coverImage // ✅ this shows on the results page
-      };
 
      fetch('https://gashtelo-production.up.railway.app/api/properties', {
 
@@ -175,6 +181,7 @@ if (window.location.pathname.includes("results.html")) {
   const urlParams = new URLSearchParams(window.location.search);
   const locationQuery = urlParams.get('location')?.toLowerCase();
   const guestQuery = parseInt(urlParams.get('guests'), 10);
+  const typeQuery = urlParams.get('type');
   const resultsTitle = document.getElementById("resultsTitle");
 
 if (resultsTitle && locationQuery) {
@@ -189,10 +196,13 @@ if (resultsTitle && locationQuery) {
       const container = document.getElementById('propertyContainer');
       container.innerHTML = '';
 
-      const filtered = properties.filter(prop =>
-        prop.location.toLowerCase().includes(locationQuery) &&
-        (!guestQuery || prop.guests >= guestQuery)
-      );
+const filtered = properties.filter(prop =>
+  prop.location.toLowerCase().includes(locationQuery) &&
+  (!guestQuery || prop.guests >= guestQuery) &&
+  (typeQuery === "All" || prop.type?.toLowerCase() === typeQuery.toLowerCase())
+
+);
+
 
       if (filtered.length === 0) {
         container.innerHTML = `
@@ -385,4 +395,19 @@ if (
       featuredContainer.innerHTML = "<p>Could not load featured properties.</p>";
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const typeButtons = document.querySelectorAll(".type-option");
+
+  if (typeButtons.length > 0) {
+    typeButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        typeButtons.forEach(b => b.classList.remove("active")); // remove from all
+        btn.classList.add("active"); // add to clicked one
+      });
+    });
+  }
+});
+
+
 

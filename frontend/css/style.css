@@ -46,12 +46,11 @@ h1, h2, h3, h4 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 30px;
-  background: white;
-  margin: 20px;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
+
 
 .search-inputs {
   display: flex;
@@ -414,14 +413,17 @@ h1, h2, h3, h4 {
 }
 .overlay {
   position: absolute;
-  bottom: 40px; /* adjust this for vertical spacing */
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   display: flex;
   justify-content: center;
-  pointer-events: none; /* allows clicks to pass through if needed */
+
+  /* 🔥 REMOVE this line completely */
+  /* pointer-events: none; */
 }
+
 
 
 
@@ -876,7 +878,99 @@ footer {
   padding: 20px;
   text-align: center;
   font-size: 14px;
-  color: #3f3f3f;
+  color: #ffffff;
+}
+.property-type-filter {
+  margin-top: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.property-type-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.type-option {
+  padding: 14px 20px;
+  border: 1px solid #ccc;
+  background: white;
+  color: #333;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.type-option:hover,
+.type-option.active {
+  background-color: #007BFF;
+  color: white;
+  border-color: #007BFF;
+}
+.search-container {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.property-type-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.property-type-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.property-type-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.type-option {
+  padding: 10px 16px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: white;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.type-option:hover,
+.type-option.active {
+  background-color: #007BFF;
+  color: white;
+  border-color: #007BFF;
 }
 
 

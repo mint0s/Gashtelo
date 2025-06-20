@@ -31,32 +31,44 @@
 
 <section class="hero">
   <div class="overlay">
-    <div class="search-box">
-      <div class="search-inputs">
-        <input type="text" id="location" placeholder="Destination (e.g., Duhok, Shaqlawa)" />
+<div class="search-container">
+  <!-- PROPERTY TYPE GOES FIRST -->
+  <div class="property-type-bar">
+    <label class="property-type-label">Property Type:</label>
+<div class="property-type-buttons">
+  <button class="type-option active" data-type="All">🏖️ All</button>
+  <button class="type-option" data-type="Hotel">🏨 Hotel</button>
+  <button class="type-option" data-type="Villa">🏡 Villa</button>
+  <button class="type-option" data-type="Cabin">🌲 Cabin</button>
+  <button class="type-option" data-type="Bungalow">🌄 Bungalow</button>
+</div>
 
-        <div class="input-group floating">
-          <input type="date" id="checkin" required />
-          <label for="checkin">Check-in</label>
-        </div>
-
-        <div class="input-group floating">
-          <input type="date" id="checkout" required />
-          <label for="checkout">Check-out</label>
-        </div>
-
-        <input type="text" id="guests" placeholder="Guests (e.g., 2 adults, 1 child)" />
-      </div>
-      <button type="button" onclick="search()">Search</button>
-    </div>
   </div>
-</section>
+
+  <!-- SEARCH BAR AFTER -->
+  <div class="search-box">
+    <div class="search-inputs">
+      <input type="text" id="location" placeholder="Destination (e.g., Duhok, Shaqlawa)" />
+
+      <div class="input-group floating">
+        <input type="date" id="checkin" required />
+        <label for="checkin">Check-in</label>
+      </div>
+
+      <div class="input-group floating">
+        <input type="date" id="checkout" required />
+        <label for="checkout">Check-out</label>
+      </div>
+
+      <input type="text" id="guests" placeholder="Guests (e.g., 2 adults, 1 child)" />
+    </div>
+    <button type="button" onclick="search()">Search</button>
+  </div>
+</div>
 
 
 
-
-</section>
-
+  </div>
 </section>
 
 <!-- This must be outside .hero -->
@@ -75,14 +87,14 @@
     <a href="privacy.html">Privacy Policy</a>
   </p>
 </section>
-
-
-
 <script src="js/script.js"></script>
-</body>
+
+
 <!-- FOOTER -->
-<footer style="background: #ffffff; padding: 20px; text-align: center; font-size: 14px; color: #555;">
+<footer style="background: #494949; padding: 20px; text-align: center; font-size: 14px; color: #ffffff;">
   &copy; 2025 Gashtelo. All rights reserved.
 </footer>
+</body>
+
 
 </html>

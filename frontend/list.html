@@ -31,7 +31,16 @@
           <input type="number" placeholder="Price per night ($)" required />
           <input type="number" placeholder="Max Guests" required />
           <textarea placeholder="Description" rows="4" required></textarea>
-          <input type="file" id="imageUpload" name="images" accept="image/*" multiple required />
+          <label for="propertyType">Property Type:</label>
+<select id="propertyType" required>
+  <option value="Hotel">Hotel</option>
+  <option value="Villa">Villa</option>
+  <option value="Cabin">Cabin</option>
+  <option value="Apartment">Apartment</option>
+  <option value="Bungalow">Bungalow</option>
+</select>
+
+          <input type="file" id="imageUpload" multiple />
            <div id="imagePreview"></div> <!-- NEW -->
            <input type="hidden" id="coverImage" name="coverImage" /> <!-- NEW -->
           <button type="submit">Submit Property</button>

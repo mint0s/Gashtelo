@@ -34,7 +34,8 @@ const Property = mongoose.model('Property', {
   description: String,
   images: [String],
   image: String,
-  featured: Boolean  // ✅ New field
+  featured: Boolean,  // ✅ New field
+  type: String    // ✅ New field\
 });
 
 
