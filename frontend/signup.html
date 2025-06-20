@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Gashtelo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="list-page">
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="img/Logo.png" alt="Gashtelo Logo" />
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="list-property-form">
+        <h2>Create an Account</h2>
+        <form id="signupForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Email Address" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <select id="userType" required>
+            <option value="guest">Guest</option>
+            <option value="owner">Property Owner</option>
+          </select>
+          <button type="submit">Sign Up</button>
+        </form>
+        <p id="signupMsg" style="display:none;"></p>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script> <!-- We'll create this next -->
+</body>
+</html>
