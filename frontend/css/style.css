@@ -3,10 +3,11 @@ body {
   font-size: 16px;
   color: #333;
   line-height: 1.6;
-  background: none;
+  background: #f0f0f0; /* ✅ Add a light background to fix white screen */
   margin: 0;
   padding: 0;
 }
+
 
 
 header {
@@ -971,6 +972,20 @@ footer {
   background-color: #007BFF;
   color: white;
   border-color: #007BFF;
+}
+.list-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5; /* fallback background */
+}
+.list-property-form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 400px;
+  width: 100%;
 }
 
 

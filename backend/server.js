@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('./models/User.js');
+const User = require('./models/Users.js');
 
 
 const JWT_SECRET = 'your_secret_key_here'; // change to a secure secret in production
